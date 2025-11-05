@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PragmaFlow - An application studio building tools for productivity and enhancing people's potential."
+    />
+    <title>PragmaFlow - Building Tools for Productivity</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #e0e0e0;
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: rgba(22, 33, 62, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 60px 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        border-radius: 25px;
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        box-shadow: 0 15px 40px rgba(52, 152, 219, 0.4);
+      }
+
+      h1 {
+        color: #ffffff;
+        font-size: 3em;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .tagline {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.3em;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.1em;
+      }
+
+      .mission {
+        background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(41, 128, 185, 0.1) 100%);
+        border-left: 4px solid #3498db;
+        padding: 30px;
+        margin: 40px 0;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .mission h2 {
+        color: #3498db;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .mission p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.15em;
+        line-height: 1.8;
+      }
+
+      .apps-section {
+        margin: 50px 0;
+      }
+
+      .apps-section h2 {
+        color: #ffffff;
+        font-size: 2em;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .apps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .app-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .app-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .app-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        border-radius: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+      }
+
+      .app-card h3 {
+        color: #ffffff;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .app-card p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .app-card a {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 0.95em;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.3s;
+      }
+
+      .app-card a:hover {
+        border-bottom: 1px solid #3498db;
+      }
+
+      .values-section {
+        margin: 60px 0;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px;
+        border-radius: 15px;
+      }
+
+      .values-section h2 {
+        color: #ffffff;
+        font-size: 2em;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .value-item {
+        text-align: center;
+      }
+
+      .value-icon {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+      }
+
+      .value-item h3 {
+        color: #ffffff;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+      }
+
+      .value-item p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .footer a {
+        color: #3498db;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.3s;
+      }
+
+      .footer a:hover {
+        border-bottom: 1px solid #3498db;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 40px 25px;
+        }
+
+        h1 {
+          font-size: 2.2em;
+        }
+
+        .tagline {
+          font-size: 1.1em;
+        }
+
+        .apps-grid,
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+
+        body {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⚡</div>
+        <h1>PragmaFlow</h1>
+        <p class="tagline">Building Tools for Productivity</p>
+        <p class="subtitle">Enhancing people's potential, one app at a time</p>
+      </div>
+
+      <div class="mission">
+        <h2>Our Mission</h2>
+        <p>
+          At PragmaFlow, we believe in the power of well-crafted tools to
+          transform how people work and live. We build focused, privacy-first
+          applications that help you achieve more while staying in control of
+          your data and your time.
+        </p>
+      </div>
+
+      <div class="apps-section">
+        <h2>Our Applications</h2>
+        <div class="apps-grid">
+          <div class="app-card">
+            <div class="app-icon">⏱️</div>
+            <h3>FlowIntervals</h3>
+            <p>
+              A focused timer app designed to help you maintain deep work
+              sessions and take meaningful breaks. Built with privacy at its
+              core, FlowIntervals keeps your productivity data where it
+              belongs—on your device.
+            </p>
+            <a href="/flow-intervals.html">Privacy Policy →</a>
+          </div>
+
+          <div class="app-card" style="opacity: 0.6;">
+            <div class="app-icon" style="background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%); box-shadow: 0 8px 20px rgba(149, 165, 166, 0.3);">🚀</div>
+            <h3>More Coming Soon</h3>
+            <p>
+              We're constantly working on new tools to enhance your
+              productivity and make your digital life simpler. Stay tuned for
+              updates.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="values-section">
+        <h2>What We Stand For</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>
+              Your data belongs to you. We collect only what's necessary and
+              always with your explicit consent.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon">⚡</div>
+            <h3>Focus & Clarity</h3>
+            <p>
+              We build tools that do one thing exceptionally well, without
+              bloat or unnecessary complexity.
+            </p>
+          </div>
+
+          <div class="value-item">
+            <div class="value-icon">🎯</div>
+            <h3>Purpose-Driven</h3>
+            <p>
+              Every feature exists to solve a real problem and enhance your
+              productivity, not to waste your time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          <strong>PragmaFlow</strong> - Application Studio
+        </p>
+        <p style="margin-top: 10px">
+          Questions or feedback?
+          <a href="mailto:contact@pragmaflow.fr">contact@pragmaflow.fr</a>
+        </p>
+        <p style="margin-top: 20px">© 2025 PragmaFlow. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
